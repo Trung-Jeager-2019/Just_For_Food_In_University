@@ -1,0 +1,1 @@
+web: gunicorn JFFIU.wsgi:application --log-file -
