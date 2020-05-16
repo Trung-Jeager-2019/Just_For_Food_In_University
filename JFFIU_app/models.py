@@ -71,6 +71,7 @@ class OrderedItem(models.Model):
         return str(self.order.id) + " q: " + str(self.quantity) + " : " + str(self.id)
 
 
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:

@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from JFFIU_app import views
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -31,6 +31,8 @@ urlpatterns = [
     path('take-for-delivery', views.takeForDelivery, name='take_for_delivery'),
     path('complete-delivery', views.completeDelivery, name='complete_delivery'),
     path('delivery-history', views.deliveryHistory, name='delivery_history'),
-
     path('checkout', views.checkout, name='checkout'),
+
+    path('contact/', views.contactView, name='contact'),
+    path('success/', views.successView, name='success'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

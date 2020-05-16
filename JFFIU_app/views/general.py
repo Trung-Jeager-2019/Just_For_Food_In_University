@@ -12,7 +12,10 @@ from JFFIU_app.models import Restaurant, MenuItem
 
 
 def home(request):
-    data = {'title': 'THT Food System'}
+    data = {
+        'title': 'Just for Food',
+        'companyName': 'Just for Food'
+    }
     items = MenuItem.objects.filter(active=True)
     if items and items.count() > 0:
         data['menuItems'] = items
@@ -27,8 +30,10 @@ def logoutUser(request):
 
 
 def loginUser(request):
-    data = {'title': 'Login to your account'}
-
+    data = {
+        'title': 'Login to your account',
+        'companyName': 'Just for Food'
+    }
     if request.method == 'POST':
 
         username = request.POST.get('username')
@@ -42,7 +47,7 @@ def loginUser(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                print('user logged in')
+                print('User logged in')
                 nextUrl = request.POST.get('next')
                 print(nextUrl)
                 if not nextUrl:
@@ -61,7 +66,11 @@ def loginUser(request):
 
 
 def signup(request):
-    data = {'title': 'Create an account'}
+    data = {
+        'title': 'Create an account',
+        'companyName': 'Just for Food'
+    }
+    
     if(request.method == 'POST'):
 
         first_name = request.POST.get('first_name')
@@ -76,26 +85,26 @@ def signup(request):
             return redirect('signup')
 
         if password1 != password2:
-            messages.info(request, 'passwords not matching')
+            messages.info(request, 'Passwords not matching')
             return redirect('signup')
 
         else:
             if User.objects.filter(username=username).exists():
                 messages.info(
-                    request, 'Username already taken. please select another username')
+                    request, 'Username already taken. Please select another Username.')
                 return redirect('signup')
             elif User.objects.filter(email=email).exists():
                 messages.info(
-                    request, 'Email already registered.Please login to continue')
+                    request, 'Email already registered. Please login to continue.')
             else:
                 user = User.objects.create_user(
                     username=username, email=email, password=password1, first_name=first_name, last_name=last_name)
                 user.profile.role = getRole(request)
                 user.save()
 
-                print('user crated')
+                print('User crated')
                 messages.info(
-                    request, 'Account created successfully. Please login to continue')
+                    request, 'Account created successfully. Please login to continue.')
         return redirect('login')
     else:
         # check account type, 3 types normal, rider and restaurent owner
@@ -109,23 +118,34 @@ def signup(request):
 
 
 def specials(request):
-    data = {'title': 'Special deals'}
+    data = {
+        'title': 'Special deals',
+        'companyName': 'Just for Food'
+    }
     return render(request, 'specials.html', processData(request, data))
 
 
 def offers(request):
-    data = {'title': 'New offers'}
+    data = {
+        'title': 'New offers',
+        'companyName': 'Just for Food'
+    }
     return render(request, 'offers.html', processData(request, data))
 
 
 def support(request):
-    data = {'title': 'Customer support page'}
+    data = {
+        'title': 'Customer support page',
+        'companyName': 'Just for Food'
+    }
     return render(request, 'support.html', processData(request, data))
 
 
 def cart(request):
-    data = {'title': 'Shopping Cart'}
-
+    data = {
+        'title': 'Shopping Cart',
+        'companyName': 'Just for Food'
+    }
     return render(request, 'cart.html', processData(request, data))
 
 
@@ -146,25 +166,27 @@ def addToCart(request):
                     request, newItem['name'] + " added to cart please 'proceed to checkout' from your cart to finish your order")
 
             else:
-                messages.error(request, "cant find item you have selected")
+                messages.error(request, "Can't find item you have selected.")
 
         except Exception as e:
             print(e)
-            messages.error(request, "an error occured. please try again")
+            messages.error(request, "An error occured. Please try again.")
 
     else:
-        messages.error(request, "Please select item to add to cart")
+        messages.error(request, "Please select item to add to cart.")
 
     return redirect(request.META.get('HTTP_REFERER', 'cart'))
 
 
 @login_required
 def removeFromCart(request):
-    data = {'title': 'Remove Item From Cart'}
-
+    data = {
+        'title': 'Remove Item From Cart',
+        'companyName': 'Just for Food'
+    }
     id = toId(request.GET.get('id', -1))
     if not id:
-        messages.error(request, 'Please select an item to remove from cart')
+        messages.error(request, 'Please select an item to remove from cart.')
         return redirect(request.META.get('HTTP_REFERER', 'home'))
     items = request.session.get('items', [])
     itemToRemove = None
@@ -175,7 +197,7 @@ def removeFromCart(request):
             break
 
     if not itemToRemove:
-        messages.info(request, 'cant find item in cart')
+        messages.info(request, "Can't find item in cart")
 
     else:
         newItems = [i for i in items if not (i['id'] == itemToRemove["id"])]
@@ -188,17 +210,25 @@ def removeFromCart(request):
 
 @login_required
 def profile(request):
-    data = {'title': 'Profile'}
+    data = {
+        'title': 'Profile',
+        'companyName': 'Just for Food'
+    }
     return render(request, 'user/profile.html', processData(request, data))
 
 
 @login_required
 def dashboard(request):
-
-    data = {'title': 'Dashboard'}
+    data = {
+        'title': 'Dashboard',
+        'companyName': 'Just for Food'
+    }
     return render(request, 'user/profile.html', processData(request, data))
 
 
 def partnerWithUs(request):
-    data = {'title': 'Partner with us'}
+    data = {
+        'title': 'Partner with us',
+        'companyName': 'Just for Food'
+    }
     return render(request, 'partner/select.html', processData(request, data))

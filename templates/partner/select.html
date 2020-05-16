@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-4 mx-auto">
             <div class="card mb-4 shadow-sm">
-                    <img src="{% static 'images/shipping.svg' %}" class="mx-auto my-5" width="30%"  alt="">
+                    <img src="{% static 'images/riding-fast-delivery.png' %}" class="mx-auto my-5" width="30%"  alt="">
                 <div class="card-body">
                     <p class="card-text">
                             Deliver with {{companyName}}<br>
@@ -13,8 +13,8 @@
                     </p>
                     
                     <div class="btn-group">
-                        <a href="{% url 'signup'%}?type=rider" class="btn round btn-sm btn-outline-primary">Create an account</a>
-                        <a href="{% url 'login'%}?type=rider" class="btn round btn-sm btn-outline-primary">Login as rider</a>
+                        <a href="{% url 'signup'%}?type=rider" class="btn round btn-sm btn-outline-warning">Create an account</a>
+                        <a href="{% url 'login'%}?type=rider" class="btn round btn-sm btn-outline-danger">Login as rider</a>
                     </div> 
                 </div>
             </div>       
@@ -30,8 +30,8 @@
                     </p>
                     
                     <div class="btn-group">
-                            <a href="{% url 'signup'%}?type=owner" class="btn round btn-sm btn-outline-primary">Create an account</a>
-                            <a href="{% url 'login'%}?type=owner" class="btn round btn-sm btn-outline-primary">Login as owner</a>
+                            <a href="{% url 'signup'%}?type=owner" class="btn round btn-sm btn-outline-warning">Create an account</a>
+                            <a href="{% url 'login'%}?type=owner" class="btn round btn-sm btn-outline-danger">Login as owner</a>
                     </div> 
                 </div>
             </div> 

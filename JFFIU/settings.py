@@ -25,6 +25,8 @@ SECRET_KEY = 'z8h4ja6^!dxbir18zs3hc0g^kd+kudy3#@1+1ap*&bcta#@(1r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'JFFIU.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,7 +71,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'JFFIU.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
