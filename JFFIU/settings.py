@@ -25,7 +25,14 @@ SECRET_KEY = 'z8h4ja6^!dxbir18zs3hc0g^kd+kudy3#@1+1ap*&bcta#@(1r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# CONTACT EMAIL:
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'grteam.tht131417@gmail.com'
+EMAIL_HOST_PASSWORD = 'groupsteam131417'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 
 ALLOWED_HOSTS = ['*']
 

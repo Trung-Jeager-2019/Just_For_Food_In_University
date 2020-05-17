@@ -33,6 +33,6 @@ urlpatterns = [
     path('delivery-history', views.deliveryHistory, name='delivery_history'),
     path('checkout', views.checkout, name='checkout'),
 
-    path('contact/', views.contactView, name='contact'),
-    path('success/', views.successView, name='success'),
+    path('contact-us/', views.contactView, name='contact-us'),
+    path('success-send/', views.successView, name='success-send'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

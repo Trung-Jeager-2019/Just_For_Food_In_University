@@ -1,26 +1,43 @@
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import EmailMessage, send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from JFFIU_app.forms import ContactForm
+from JFFIU_app.forms import *
+from templates import *
+from django.template.loader import get_template
 
 
 @login_required
 def contactView(request):
     if request.method == 'GET':
-        form = ContactForm()
+        Contact_Form = ContactForm()
+        return render(request, 'contact.html', {'form': Contact_Form})
     else:
-        form = ContactForm(request.POST)
+        form = ContactForm(data=request.POST)
         if form.is_valid():
-            subject = form.cleaned_data['subject']
-            email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
-            try:
-                send_mail(subject, message, email, ['grteam.tht131417@gmail.com'])
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-            return redirect('success')
-    return render(request, "contact.html", {'form': form})
+
+            contact_name = request.POST.get('contact_name')
+            contact_email = request.POST.get('contact_email')
+            contact_content = request.POST.get('content')
+
+            template = get_template('/templates/contact_form.html')
+
+            context = {
+                'contact_name': contact_name,
+                'contact_email': contact_email,
+                'contact_content': contact_content,
+            }
+            content = template.render(context)
+
+            email = EmailMessage(
+                "New contact form email",
+                content,
+                "Creative web" + '',
+                ['grteam.tht131417@gmail.com'],
+                header = { 'Reply To': contact_email }
+            )
+        email.send_mail()
+        return redirect('success-send')
 
 
 @login_required
