@@ -20,13 +20,14 @@ def contactView(request):
             contact_email = request.POST.get('contact_email')
             contact_content = request.POST.get('content')
 
-            template = get_template('/templates/contact_form.html')
+            template = get_template('templates/contact_form.txt')
 
             context = {
                 'contact_name': contact_name,
                 'contact_email': contact_email,
                 'contact_content': contact_content,
             }
+            
             content = template.render(context)
 
             email = EmailMessage(
@@ -34,9 +35,9 @@ def contactView(request):
                 content,
                 "Creative web" + '',
                 ['grteam.tht131417@gmail.com'],
-                header = { 'Reply To': contact_email }
+                # header = { 'Reply To': contact_email }
             )
-        email.send_mail()
+        email.send()
         return redirect('success-send')
 
 

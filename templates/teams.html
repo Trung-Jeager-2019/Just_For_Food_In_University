@@ -1,173 +1,154 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block style %}
-    @import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
-    .team1 {
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    @import url(//fonts.googleapis.com/css?family=Montserrat:300,500);
+    .team4 {
     font-family: "Montserrat", sans-serif;
         color: #8d97ad;
     font-weight: 300;
     }
 
-    .team1 h1, .team1 h2, .team1 h3, .team1 h4, .team1 h5, .team1 h6 {
+    .team4 h1, .team4 h2, .team4 h3, .team4 h4, .team4 h5, .team4 h6 {
     color: #3e4555;
     }
 
-    .team1 .font-weight-medium {
+    .team4 .font-weight-medium {
         font-weight: 500;
     }
 
-    .team1 .bg-light {
-        background-color: #f4f8fa !important;
+    .team4 h5 {
+        line-height: 22px;
+        font-size: 18px;
     }
 
-    .team1 .subtitle {
+    .team4 .subtitle {
         color: #8d97ad;
         line-height: 24px;
+            font-size: 13px;
     }
 
-    .team1 .pro-pic {
-    min-height: 200px;
-    }
-
-    .team1 .pro-pic .card-img-overlay {
-    background: rgba(26, 139, 243, 0.87);
-    display: none;
-    }
-
-    .team1 .pro-pic .card-img-overlay ul {
-    top: 50%;
-    }
-
-    .team1 .pro-pic .card-img-overlay ul li a {
+    .team4 ul li a {
+    color: #8d97ad;
+    padding-right: 15px;
     -webkit-transition: 0.1s ease-in;
     -o-transition: 0.1s ease-in;
     transition: 0.1s ease-in;
     }
 
-    .team1 .pro-pic .card-img-overlay ul li a:hover {
+    .team4 ul li a:hover {
     -webkit-transform: translate3d(0px, -5px, 0px);
     transform: translate3d(0px, -5px, 0px);
-    }
-
-    .team1 .pro-pic:hover .card-img-overlay {
-    display: block;
-    }    
+        color: #316ce8;
+    }   
 {% endblock %}
+
 {% block content %}
-    <div class="py-5 bg-light team1">
+    <div class="py-5 team4">
         <div class="container">
-            <div class="row justify-content-center mb-3">
+            <div class="row justify-content-center mb-4">
             <div class="col-md-7 text-center">
-                <h3 class="mb-3">Who We Are? Meet Our Team!</h3>
-                <h4 class="subtitle font-weight-normal">We listen, we discuss, we advise and develop. We love to learn and use the latest technologies.</h4>
+                <h3 class="mb-3">Experienced & Professional Team</h3>
+                <h6 class="subtitle">You can relay on our amazing features list and also our customer services will be great experience for you without doubt and in no-time</h6>
             </div>
             </div>
             <div class="row">
             <!-- column  -->
-            <div class="col-lg-6">
-                <div class="card card-shadow border-0 mb-4">
+            <div class="col-lg-3 mb-4">
                 <!-- Row -->
-                <div class="row no-gutters">
-                    <div class="col-md-5 pro-pic" style="background:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t1.jpg) center center no-repeat / cover">
-                    <div class="card-img-overlay">
-                        <ul class="list-inline position-relative text-center">
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-instagram"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-behance"></i></a></li>
-                        </ul>
-                    </div>
-                    </div>
-                    <div class="col-md-7 bg-white">
-                    <div class="p-4">
-                        <h6 class="mb-3 font-weight-medium">Michael Doe</h6>
-                        <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                    </div>
+                <div class="row">
+                <div class="col-md-12">
+                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t1.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+                </div>
+                <div class="col-md-12 text-center">
+                    <div class="pt-2">
+                    <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                    <h6 class="subtitle mb-3">Property Specialist</h6>
+                    <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="https://www.facebook.com/huong.le.1707" target='blank' class="text-decoration-none d-block px-1"><i class="fa fa-facebook-square">fb</i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-behance"></i></a></li>
+                    </ul>
                     </div>
                 </div>
-                <!-- Row -->
                 </div>
+                <!-- Row -->
             </div>
             <!-- column  -->
-            <div class="col-lg-6">
-                <div class="card card-shadow border-0 mb-4">
+            <!-- column  -->
+            <div class="col-lg-3 mb-4">
                 <!-- Row -->
-                <div class="row no-gutters card-shadow">
-                    <div class="col-md-5 pro-pic" style="background:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg) center center no-repeat / cover">
-                    <div class="card-img-overlay">
-                        <ul class="list-inline position-relative text-center">
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-instagram"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-behance"></i></a></li>
-                        </ul>
-                    </div>
-                    </div>
-                    <div class="col-md-7 bg-white">
-                    <div class="p-4">
-                        <h6 class="mb-3 font-weight-medium">Michael Doe</h6>
-                        <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                    </div>
+                <div class="row">
+                <div class="col-md-12">
+                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+                </div>
+                <div class="col-md-12 text-center">
+                    <div class="pt-2">
+                    <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                    <h6 class="subtitle mb-3">Property Specialist</h6>
+                    <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-behance"></i></a></li>
+                    </ul>
                     </div>
                 </div>
-                <!-- Row -->
                 </div>
+                <!-- Row -->
             </div>
             <!-- column  -->
-            </div>
-            <div class="row">
             <!-- column  -->
-            <div class="col-lg-6">
-                <div class="card card-shadow border-0 mb-4">
+            <div class="col-lg-3 mb-4">
                 <!-- Row -->
-                <div class="row no-gutters card-shadow">
-                    <div class="col-md-5 pro-pic" style="background:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg) center center no-repeat / cover">
-                    <div class="card-img-overlay">
-                        <ul class="list-inline position-relative text-center">
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-instagram"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-behance"></i></a></li>
-                        </ul>
-                    </div>
-                    </div>
-                    <div class="col-md-7 bg-white">
-                    <div class="p-4">
-                        <h6 class="mb-3 font-weight-medium">Michael Doe</h6>
-                        <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                    </div>
+                <div class="row">
+                <div class="col-md-12">
+                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+                </div>
+                <div class="col-md-12 text-center">
+                    <div class="pt-2">
+                    <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                    <h6 class="subtitle mb-3">Property Specialist</h6>
+                    <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-behance"></i></a></li>
+                    </ul>
                     </div>
                 </div>
-                <!-- Row -->
                 </div>
+                <!-- Row -->
             </div>
             <!-- column  -->
-            <div class="col-lg-6">
-                <div class="card card-shadow border-0 mb-4">
-                <!-- Row -->
-                <div class="row no-gutters card-shadow">
-                    <div class="col-md-5 pro-pic" style="background:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg) center center no-repeat / cover">
-                    <div class="card-img-overlay">
-                        <ul class="list-inline position-relative text-center">
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-instagram"></i></a></li>
-                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-behance"></i></a></li>
-                        </ul>
-                    </div>
-                    </div>
-                    <div class="col-md-7 bg-white">
-                    <div class="p-4">
-                        <h6 class="mb-3 font-weight-medium">Michael Doe</h6>
-                        <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                    </div>
-                    </div>
-                </div>
-                <!-- Row -->
-                </div>
-            </div>
             <!-- column  -->
+            <div class="col-lg-3 mb-4">
+                <!-- Row -->
+                <div class="row">
+                <div class="col-md-12">
+                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+                </div>
+                <div class="col-md-12 text-center">
+                    <div class="pt-2">
+                    <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                    <h6 class="subtitle mb-3">Property Specialist</h6>
+                    <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i class="icon-social-behance"></i></a></li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+                <!-- Row -->
+            </div>
             </div>
         </div>
-        </div>
+    </div>
 {% endblock content %}
