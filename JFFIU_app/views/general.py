@@ -117,6 +117,14 @@ def signup(request):
         return render(request, 'signup.html', processData(request, data))
 
 
+def aboutTeams(request):
+    data = {
+        'title': 'Meet Our Team!',
+        'companyName': 'Just for Food'
+    }
+    return render(request, 'teams.html', processData(request, data))
+
+
 def specials(request):
     data = {
         'title': 'Special deals',
@@ -232,3 +240,4 @@ def partnerWithUs(request):
         'companyName': 'Just for Food'
     }
     return render(request, 'partner/select.html', processData(request, data))
+
