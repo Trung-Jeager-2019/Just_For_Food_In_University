@@ -10,33 +10,34 @@ from django.template.loader import get_template
 
 @login_required
 def contactView(request):
+    Contact_Form = ContactForm(request.POST or None)
     if request.method == 'GET':
-        Contact_Form = ContactForm()
         return render(request, 'contact.html', {'form': Contact_Form})
     else:
-        form = ContactForm(request.POST or None)
+        form = Contact_Form
         if form.is_valid():
-
+            
             contact_name = request.POST.get('contact_name')
             contact_email = request.POST.get('contact_email')
             contact_content = request.POST.get('content')
 
-            template = get_template('templates/contact_form.txt')
+            # template = get_template('templates/contact_form.txt')
 
-            context = {
-                'contact_name': contact_name,
-                'contact_email': contact_email,
-                'contact_content': contact_content,
-            }
+            # context = {
+            #     'contact_name': contact_name,
+            #     'contact_email': contact_email,
+            #     'contact_content': contact_content,
+            # }
             
-            content = template.render(context)
+            # content = template.render(context)
+            content = "- Contact name: " + contact_name + "\n\n" + "- Contact email: " + contact_email + "\n\n" + "- Contact content: " + "\n\t" + contact_content
+            
 
             email = EmailMessage(
-                "New contact form email",
+                "Just For Food In University",
                 content,
-                "Creative web" + '',
+                "Groups Team THTH" + '',
                 ['grteam.tht131417@gmail.com'],
-                # header = { 'Reply To': contact_email }
             )
         email.send()
         return redirect('success-send')

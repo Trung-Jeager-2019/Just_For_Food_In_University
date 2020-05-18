@@ -34,7 +34,7 @@ class Restaurant(models.Model):
     country = models.CharField(max_length=100, default='')
     state = models.CharField(max_length=100, default='')
     zip = models.CharField(max_length=100, default='')
-    location = models.CharField(max_length=100, default="India")
+    location = models.CharField(max_length=100, default='Vietnam')
     tag = models.CharField(max_length=100, default='')
 
     def __str__(self):
@@ -69,15 +69,6 @@ class OrderedItem(models.Model):
 
     def __str__(self):
         return str(self.order.id) + " q: " + str(self.quantity) + " : " + str(self.id)
-
-
-class Contact(models.Model):
-    contact_name = models.CharField(max_length=100, default='')
-    contact_email = models.EmailField(max_length=100, default='')
-    content = models.CharField(max_length=1000 , default='')
-
-    def __str__(seft):
-        return str(self.contact_name) + "-" + str(self.contact_name) + " : " + str(self.content)
 
 
 @receiver(post_save, sender=User)
