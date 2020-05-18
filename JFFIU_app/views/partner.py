@@ -16,10 +16,10 @@ def restaurantDetails(request):
         name = request.POST.get('name')
         address1 = request.POST.get('address1', '')
         address2 = request.POST.get('address2', '')
-        country = request.POST.get('country', 'India')
+        country = request.POST.get('country', 'Vietnam')
         state = request.POST.get('state', '')
         zip = request.POST.get('zip', '')
-        location = request.POST.get('location', 'pala')
+        location = request.POST.get('location', '')
         tag = request.POST.get('tag', '')
         if not name:
             messages.error(request, 'cant save restaurant details')
@@ -55,7 +55,7 @@ def restaurantDetails(request):
 
 @login_required
 def viewMenu(request):
-    data = {'title': 'view Menu for my restaurant'}
+    data = {'title': 'View Menu for my restaurant'}
     data['menuItems'] = MenuItem.objects.filter(user=request.user)
     return render(request, 'partner/owner/view_menu.html', processData(request, data))
 

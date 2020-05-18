@@ -71,6 +71,14 @@ class OrderedItem(models.Model):
         return str(self.order.id) + " q: " + str(self.quantity) + " : " + str(self.id)
 
 
+class Contact(models.Model):
+    contact_name = models.CharField(max_length=100, default='')
+    contact_email = models.EmailField(max_length=100, default='')
+    content = models.CharField(max_length=1000 , default='')
+
+    def __str__(seft):
+        return str(self.contact_name) + "-" + str(self.contact_name) + " : " + str(self.content)
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from JFFIU_app.forms import *
 from templates import *
+from django.contrib import messages
 from django.template.loader import get_template
 
 
@@ -13,7 +14,7 @@ def contactView(request):
         Contact_Form = ContactForm()
         return render(request, 'contact.html', {'form': Contact_Form})
     else:
-        form = ContactForm(data=request.POST)
+        form = ContactForm(request.POST or None)
         if form.is_valid():
 
             contact_name = request.POST.get('contact_name')
@@ -43,4 +44,5 @@ def contactView(request):
 
 @login_required
 def successView(request):
-    return HttpResponse('Success! Thank you for your message.')
+    messages.info(request, "Success! Thank you for your message.")
+    return redirect('home')
