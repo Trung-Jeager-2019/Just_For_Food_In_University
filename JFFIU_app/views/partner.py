@@ -12,7 +12,6 @@ from django_countries import countries
 @login_required
 def restaurantDetails(request):
     data = {'title': 'My Restaurant Details'}
-    print("one")
     if request.method == "POST":
         name = request.POST.get('name')
         address1 = request.POST.get('address1', '')
@@ -51,7 +50,6 @@ def restaurantDetails(request):
     data['rest'] = Restaurant.objects.filter(
         user=request.user).order_by('id').first()
     data['countries'] = list(countries)
-    print(data['rest'])
     return render(request, 'partner/owner/restaurant_details.html', processData(request, data))
 
 
