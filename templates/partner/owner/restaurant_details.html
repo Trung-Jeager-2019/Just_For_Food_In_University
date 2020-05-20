@@ -1,5 +1,7 @@
-
 {% extends 'user/profile.html' %}
+{% load countries %}
+{% get_countries as countries %}
+
 {% block dashboardContent %}
 <form class="needs-validation" novalidate="" method="post" action="{% url 'restaurant_details'  %}">
 {% csrf_token %}
@@ -32,7 +34,9 @@
           <div class="col-md-5 mb-3">
             <label for="country">Country</label>
             <select class="custom-select d-block w-100" id="country" required="" name="country">
-              <option selected>India</option>
+              {% for country in countries %}
+                <option value="{{ country.code }}">{{ country.name }}</option>
+              {% endfor %}
             </select>
             <div class="invalid-feedback">
               Please select a valid country.

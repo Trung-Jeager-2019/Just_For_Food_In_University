@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from JFFIU_app.models import Restaurant, MenuItem, Order, OrderedItem
+from django_countries import countries
 
 # Create your views here
 @login_required
@@ -49,6 +50,7 @@ def restaurantDetails(request):
 
     data['rest'] = Restaurant.objects.filter(
         user=request.user).order_by('id').first()
+    data['countries'] = list(countries)
     print(data['rest'])
     return render(request, 'partner/owner/restaurant_details.html', processData(request, data))
 
