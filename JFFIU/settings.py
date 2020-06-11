@@ -94,8 +94,8 @@ WSGI_APPLICATION = 'JFFIU.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'jffiu',
-        'USER': 'jffiu_user',
+        'NAME': 'psql_db',
+        'USER': 'psqluser',
         'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '',
