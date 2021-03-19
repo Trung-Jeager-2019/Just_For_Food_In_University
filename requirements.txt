@@ -6,7 +6,7 @@ django-crispy-forms==1.9.1
 django-formhelper==0.2
 django-model-utils==4.0.0
 gunicorn==20.0.4
-Pillow==7.1.1
+Pillow==8.1.1
 psycopg2==2.8.5
 pycodestyle==2.5.0
 pytz==2019.3
